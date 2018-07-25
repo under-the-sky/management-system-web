@@ -1,0 +1,94 @@
+  @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 24px 0 0;
+    font-size: 15px;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  body {
+    background: #fff;
+    direction: ltr;
+    font-size: 15px;
+    line-height: 1.4286;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home::before {
+    content: '';
+    position: relative;
+    display: block;
+    min-height: 30px;
+    flex-grow: 1;
+  }
+
+  .home::after {
+    content: '';
+    position: relative;
+    display: block;
+    min-height: 30px;
+    flex-grow: 1;
+  }
+
+  .login-botton {
+    margin-top: 10px;
+  }
+
+  .home-login {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+    min-height: 0;
+    width: 450px;
+    height: 500px;
+  }
+
+  .home-login-content {
+    padding: 48px 40px 36px;
+  }
+
+  .home-login-content-icon {
+    height: 24px;
+  }
+
+  .home-login-content-main {
+    height: 384px;
+  }
+
+  .home-login-content-main-title {
+    height: 79px;
+  }
+
+  .home-login-content-main-title h1 {
+    font-family: 'Google Sans', arial, sans-serif;
+    padding-top: 16px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .home-login-content-main-title div {
+    font-family: 'roboto,arial,sans-serif';
+    font-size: 16px;
+    letter-spacing: .1px;
+    line-height: 1.5;
+    padding-bottom: 0;
+    padding-top: 8px;
+  }
