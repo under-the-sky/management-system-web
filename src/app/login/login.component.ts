@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { LoginService } from './service/login.service';
 import { ErrorStateMatcher } from '@angular/material';
 import {
@@ -35,7 +37,10 @@ export class LoginComponent implements OnInit {
   isLoginFail = false;
   account: FormGroup;
   matcher = new LoginStateError();
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService,
+    private route: Router,
+  ) { }
   get username() {
     return this.account.get('username');
   }
@@ -48,6 +53,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFail = true;
       } else {
         this.isLoginFail = false;
+        // this.route.navigate
       }
     });
   }
@@ -56,7 +62,9 @@ export class LoginComponent implements OnInit {
       username: new FormControl('', [
         Validators.required,
       ]),
-      password: new FormControl()
+      password: new FormControl('', [
+        Validators.required,
+      ])
     });
   }
 
