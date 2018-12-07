@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboards/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 /** 配置 angular i18n **/
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { DashboardModule } from './dashboards/dashboard.module';
 registerLocaleData(zh);
 
 @NgModule({
@@ -29,12 +31,14 @@ registerLocaleData(zh);
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    DashboardModule
   ],
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    PageNotFoundComponent,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
