@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { LoginService } from './service/login.service';
+import { CommonService } from '../services/common.service';
 import { ErrorStateMatcher } from '@angular/material';
 import {
   LOGIN_ACCOUNT_USERNAME,
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
   account: FormGroup;
   matcher = new LoginStateError();
   constructor(
-    private loginService: LoginService,
+    private commonService: CommonService,
     private route: Router,
   ) { }
   get username() {
@@ -48,12 +47,12 @@ export class LoginComponent implements OnInit {
     return this.account.get('password');
   }
   login() {
-    this.loginService.login(this.account.value).subscribe(res => {
+    this.commonService.login(this.account.value).subscribe(res => {
       if (res.error) {
         this.isLoginFail = true;
       } else {
         this.isLoginFail = false;
-        // this.route.navigate
+        this.route.navigate(['/']);
       }
     });
   }
